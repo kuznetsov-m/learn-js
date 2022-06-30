@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Tag SCRIPT</title>
+</head>
+
+<body>
+    <button id="addOneBtn" onclick="addText(true)">Add one</button>
+    <button id="addOneBtn" onclick="addText(false)">Add custom</button>
+    
+    <div id="paragraphs">
+        <p>This is a paragraph.</p>
+    </div>
+    
+    <script type="text/javascript">
+        function addText(useDefaultText) {
+            let text = 'default message text';
+
+            if (!useDefaultText) {
+                text = prompt("Type your message");
+            }
+                       
+            const paragraph = document.createElement("p");
+            const node = document.createTextNode(text);
+            paragraph.appendChild(node);
+
+            const element = document.getElementById("paragraphs");
+            element.appendChild(paragraph);
+        }
+    </script>
+</body>
+
+</html>
