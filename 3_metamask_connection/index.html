@@ -1,0 +1,67 @@
+<html>
+
+<head>
+  <title>Web3 Metamask Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body>
+    <button id="loginButton">Login with MetaMask</button>
+    <p>Wallet: <span id="userWallet"></span></p>
+    <p>ChainId: <span id="chainId"></span></p>
+
+    <script>
+        window.userWalletAddress = null
+        const loginButton = document.getElementById('loginButton')
+        const userWallet = document.getElementById('userWallet')
+        const chainId = document.getElementById('chainId')
+
+        function toggleButton() {
+            if (!window.ethereum) {
+                loginButton.innerText = 'MetaMask is not installed'
+                return false
+            }
+
+            loginButton.addEventListener('click', loginWithMetaMask)
+        }
+
+        async function loginWithMetaMask() {
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+                .catch((e) => {
+                console.error(e.message)
+                return
+                })
+            if (!accounts) { return }
+            window.userWalletAddress = accounts[0]
+
+            window.chainId = await window.ethereum.request({ method: 'eth_chainId' })
+            
+            userWallet.innerText = window.userWalletAddress
+            chainId.innerText = Number(window.chainId)
+            loginButton.innerText = 'Sign out of MetaMask'
+
+            loginButton.removeEventListener('click', loginWithMetaMask)
+            setTimeout(() => {
+                loginButton.addEventListener('click', signOutOfMetaMask)
+            }, 200)
+        }
+
+        function signOutOfMetaMask() {
+            window.userWalletAddress = null
+            userWallet.innerText = ''
+            chainId.innerText = ''
+            loginButton.innerText = 'Sign in with MetaMask'
+
+            loginButton.removeEventListener('click', signOutOfMetaMask)
+            setTimeout(() => {
+                loginButton.addEventListener('click', loginWithMetaMask)
+            }, 200)
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            toggleButton()
+        });
+    </script>
+</body>
+
+</html>
