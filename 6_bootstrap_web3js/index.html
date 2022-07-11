@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Private NFT Club</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-lg-5">
+                <a class="navbar-brand" href="#!">Private NFT Club</a>
+                <a class="nav-link" id="userWallet" href="#!"></a>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-lg-5">
+                <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold">Welcome to Private NFT Club!</h1>
+                        <p class="fs-4">Do you have our NFT pass?</p>
+                        <a class="btn btn-primary btn-lg" id="connectWalletBtn" href="#!">Connect MetaMask Wallet</a>
+                        <a class="btn btn-primary btn-lg" id="checkIn" href="#!">Check access</a>
+                        <!-- <button id="connectWalletBtn">Connect MetaMask Wallet</button> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Page Content-->
+        <section class="pt-4">
+            <div class="container px-lg-5">
+                <!-- Status -->
+                <div class="p-4 p-lg-5 bg-light rounded-3" id="statusBlock">
+                    <div class="m-4 m-lg-5">
+                        <h1 class="display-5 fw-bold" id="flashMessage"></h1>
+                        <!-- <p class="fs-4">Do you have our NFT?</p>
+                        <a class="btn btn-primary btn-lg" id="connectWalletBtn" href="#!">Connect MetaMask Wallet</a>
+                        <a class="btn btn-primary btn-lg" id="checkIn" href="#!">Check In</a> -->
+                    </div>
+                </div>
+                <!-- Page Features-->
+                <div class="row gx-lg-5">
+                </div>
+            </div>
+        </section>
+        <!-- Product section-->
+        <section class="py-5" id="product">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+                    <div class="col-md-6">
+                        <div class="small mb-1">
+                            <a href="!#" id="nftContractAddress"></a>
+                        </div>
+                        <h1 class="display-5 fw-bolder">NFT pass</h1>
+                        <div class="fs-5 mb-5">
+                            <span class="text-decoration-line-through">$1000</span>
+                            <span>$0.01</span>
+                        </div>
+                        <p class="lead">This pass will give you access to really awesome club.</p>
+                        <div class="d-flex">
+                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                                <i class="bi-cart-fill me-1"></i>
+                                Buy now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script type="module" src="js/index.js"></script>
+    </body>
+</html>
