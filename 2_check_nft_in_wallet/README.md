@@ -11,3 +11,4 @@ NFT address: https://rinkeby.etherscan.io/address/0x21a932c8e5eac252be0a0860b18c
 
 # Links
 - https://www.youtube.com/watch?v=Wa54QCDrZ9Q
+- https://www.youtube.com/watch?v=19SSvs32m8I
