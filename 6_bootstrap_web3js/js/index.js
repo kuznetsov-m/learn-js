@@ -11,6 +11,7 @@ const userWallet = document.body.querySelector('a[id=userWallet]')
 const flashMessage = document.querySelector('h1[id=flashMessage]')
 const nftContractAddress = document.querySelector('a[id=nftContractAddress]')
 const productSection = document.querySelector('section[id=product]')
+const nftImage = document.querySelector('img[id=nftImage]')
 
 const RINKEBY_CHAIN_ID = 4;
 const NFT_CONTRACT_ADDRESS = '0x21a932c8e5eac252be0a0860b18c4edb8ee66034';
@@ -69,7 +70,7 @@ async function isNftInWallet(walletAddress) {
 
     web3 = new Web3(window.ethereum);
     const contract = new web3.eth.Contract(TEST_TOKEN_ABI, NFT_CONTRACT_ADDRESS);
-    const tokenId = 1;
+    const tokenId = 2;
     console.log(contract.methods);
     const balance = await contract.methods.balanceOf(walletAddress, tokenId).call();
     console.log(`NFT in wallet: ${balance}`);
@@ -89,6 +90,7 @@ async function checkAccess() {
         } else {
             flashMessage.innerText = 'Still have no NFT pass?'
             productSection.hidden = false;
+            nftImage.src = await getNftImageUrl(window.userWalletAddress);
         }
     }
 
@@ -96,7 +98,7 @@ async function checkAccess() {
     statusBlock.hidden = false;
 }
 
-async function displayNft(walletAddress) {
+async function getNftImageUrl(walletAddress) {
     web3 = new Web3(window.ethereum);
     const contract = new web3.eth.Contract(TEST_TOKEN_ABI, NFT_CONTRACT_ADDRESS);
     const tokenId = 1;
@@ -121,6 +123,12 @@ async function displayNft(walletAddress) {
         imageUrl = `https://ipfs.io/${imageUrl.split('ipfs://')[1]}`;
     }
 
+    return imageUrl;
+}
+
+async function displayNft(walletAddress) {
+    let imageUrl = await getNftImageUrl(walletAddress);
+
     const nftElement = document.getElementById('nft_template').content.cloneNode(true);
     nftElement.querySelector('h1').innerText = tokenMetadata['name'];
     nftElement.querySelector('a').href = tokenMetadata['external_url'];
@@ -132,5 +140,5 @@ async function displayNft(walletAddress) {
 
 window.addEventListener('DOMContentLoaded', () => {
     init();
-    toggleButton()
+    toggleButton();
 });
