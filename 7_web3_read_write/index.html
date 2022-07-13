@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <button id="connectWalletBtn">ConnectWallet</button>
+        <p>Wallet: <span id="userWallet"></span></p>
+        <p>Contract: <span id="contractAddress"></span></p>
+        <button id="callContract">Call contract</button>
+        
+        <div>
+            <label for="writeDataInputName">Data:</label>
+            <input type="text" id="writeDataInput" name="writeDataInputName" value="defaulData">
+            <button id="sendWriteDataTx">Send writeData transaction</button>
+        </div>
+            
+        <div id="transactionsContainer"></div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+        <script type="module" src="js/index.js"></script>
+    </body>
+</html>
