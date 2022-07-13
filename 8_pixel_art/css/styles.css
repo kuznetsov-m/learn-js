@@ -1,0 +1,103 @@
+body {
+  text-align: center;
+}
+
+.mainTitle {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2rem;
+  margin: 0.2em;
+  color: #37374f;
+}
+
+.mainTitle {
+	font: bold 2em/1.5 'Press Start 2P', cursive;
+	text-align: center;
+	padding: 1.25em 0 0.208em 0;
+	margin:0 auto;
+}
+
+
+.chooseTitle {
+  margin: 1em 0 0.25em;
+}
+
+table, tr, td {
+  border: 3px solid rgb(198, 202, 206);
+}
+
+table {
+  border-collapse: collapse;
+  margin: 40px auto;
+}
+
+tr {
+  height: 40px;
+}
+
+td {
+  width: 40px;
+}
+
+input[type=number] {
+  width: 3em;
+  margin-right: 10px;
+}
+
+input[type=submit] {
+  margin-right: 2em;
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .mainTitle {
+    font-size: 1.1rem;
+    display: inline;
+  }
+
+  .chooseTitle {
+    font-size: 1.1rem;
+    display: inline;
+  }
+
+  table {
+    margin: 10px auto;
+  }
+
+    tr {
+    height: 30px;
+  }
+
+  td {
+    width: 30px;
+  }
+}
+
+button {
+	background-color: #655e8c;
+	color: #fff;
+	border-radius: 3px;
+	border: 0 none;
+	padding: 5px 10px;
+	margin: 15px auto;
+}
+
+/*===== INPUT STYLES =====*/
+
+label {
+	font: 1.5em/1.5 'Lato', sans-serif;
+	margin: 0;
+}
+
+.left label,
+.right label {
+	display: block;
+}
+
+input[type=number] {
+	width: 70px;
+	margin-left: 10px;
+	vertical-align: middle;
+	border: 1px solid #655e8c;
+	color: #37374f;
+}

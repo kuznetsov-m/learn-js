@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pixel Art Maker!</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press+Start+2P">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id = "container">
+    <div class = "panel">
+      <h1 class ="mainTitle">Blockchain Pixel Art</h1>
+
+      <button id="connectWalletBtn">Connect Wallet</button>
+      <p>Wallet: <span id="userWallet"></span></p>
+      <p>Contract: <span id="contractAddress"></span></p>
+
+      <div class="color">
+        <label>Pick a color</label>
+        <input type="color" id="colorPicker">
+        <label>and tap cell for fill it!</label>
+      </div>
+
+    </div>
+    <table id="pixel_canvas"></table>
+  </div>
+
+  <div><label><a href="https://github.com/kuznetsov-m/learn-js/tree/master/8_pixel_art">GitHub Source</a></label></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <script async type="module" src="js/designs.js"></script>
+</body>
+</html>
